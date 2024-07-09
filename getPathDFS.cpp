@@ -26,6 +26,9 @@ vector<int> getPathDFS(bool ** edges, int n, bool * visited, int v1,int v2){
     }
     return path;
 }
+vector<int> getPathBFS(bool ** edges, int n, bool * visited, int v1 , int v2){
+    
+}
 
 int main(){
     int n;
