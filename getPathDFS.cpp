@@ -1,5 +1,7 @@
 #include<iostream>
 #include<vector>
+#include<map>
+#include<queue>
 using namespace std;
 
 vector<int> getPathDFS(bool ** edges, int n, bool * visited, int v1,int v2){
@@ -27,7 +29,36 @@ vector<int> getPathDFS(bool ** edges, int n, bool * visited, int v1,int v2){
     return path;
 }
 vector<int> getPathBFS(bool ** edges, int n, bool * visited, int v1 , int v2){
-    
+    queue<int> pending;
+    map<int,int> mp;
+    pending.push(v1);
+    visited[v1] = true;
+    while(!pending.empty()){
+        for(int i=0;i<n;i++){
+            if(visited[i]){
+                continue;
+            }
+            if(i == pending.front()){
+                continue;
+            }
+            if(edges[pending.front()][i]){
+                pending.push(i);
+                mp[i] = pending.front();
+                visited[i] = true;
+            }
+        }
+        pending.pop();
+    }
+    if(!visited[v2]){
+        return ;
+    }
+    int i = v2;
+    cout << v2 << " ";
+    while (i != v1)
+    {
+        cout << m[i] << " ";
+        i = m[i];
+    }
 }
 
 int main(){

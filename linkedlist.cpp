@@ -108,9 +108,9 @@ Node *insertNode(Node *head, int i, int data)
     }
     if (temp != NULL)
     {
-        Node *a = temp->next;
-        temp->next = newNode;
-        newNode->next = a;
+        Node *a = temp -> next;
+        temp -> next = newNode;
+        newNode -> next = a;
     }
     return head;
 }
