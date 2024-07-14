@@ -35,6 +35,7 @@ bool hasPath(bool ** edges, int n, bool * visited, int v1, int v2){
     }
     return false;
 
+    }
 }
 int main(){
     int n;
